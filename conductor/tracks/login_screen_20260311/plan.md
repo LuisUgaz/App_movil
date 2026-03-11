@@ -31,7 +31,7 @@ Esta fase finaliza la funcionalidad mínima requerida para el track.
 - [x] Task: Conductor - Implementar lógica del botón "Ingresar"
     - [x] Agregar manejador de eventos `onPress` al botón
     - [x] Implementar `console.log` indicando el intento de inicio de sesión
-- [ ] Task: Conductor - Integración de la pantalla en la App principal
-    - [ ] Modificar `App.tsx` para mostrar la `LoginScreen` como pantalla inicial
-    - [ ] Verificar la visualización correcta en un dispositivo/emulador móvil
+- [x] Task: Conductor - Integración de la pantalla en la App principal ca8ac72
+    - [x] Modificar `App.tsx` para mostrar la `LoginScreen` como pantalla inicial
+    - [x] Verificar la visualización correcta en un dispositivo/emulador móvil
 - [ ] Task: Conductor - User Manual Verification 'Fase 3: Lógica e Integración' (Protocol in workflow.md)
