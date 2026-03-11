@@ -28,9 +28,9 @@ Esta fase se enfoca en construir la interfaz de usuario siguiendo el estilo mode
 ## Fase 3: Lógica Mínima e Interacción
 Esta fase finaliza la funcionalidad mínima requerida para el track.
 
-- [ ] Task: Conductor - Implementar lógica del botón "Ingresar"
-    - [ ] Agregar manejador de eventos `onPress` al botón
-    - [ ] Implementar `console.log` indicando el intento de inicio de sesión
+- [x] Task: Conductor - Implementar lógica del botón "Ingresar"
+    - [x] Agregar manejador de eventos `onPress` al botón
+    - [x] Implementar `console.log` indicando el intento de inicio de sesión
 - [ ] Task: Conductor - Integración de la pantalla en la App principal
     - [ ] Modificar `App.tsx` para mostrar la `LoginScreen` como pantalla inicial
     - [ ] Verificar la visualización correcta en un dispositivo/emulador móvil
