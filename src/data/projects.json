@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "App de Consulta Móvil",
+    "description": "Desarrollo de una aplicación multiplataforma para consultar proyectos en tiempo real.",
+    "status": "En desarrollo",
+    "startDate": "2026-03-01",
+    "leader": "Luis Martínez"
+  },
+  {
+    "id": 2,
+    "name": "Sistema de Inventario",
+    "description": "Optimización del control de stock mediante escaneo de códigos QR.",
+    "status": "En pruebas",
+    "startDate": "2026-02-15",
+    "leader": "Sofía Pérez"
+  },
+  {
+    "id": 3,
+    "name": "Rediseño de E-commerce",
+    "description": "Modernización de la interfaz de usuario para mejorar la conversión de ventas.",
+    "status": "Planificado",
+    "startDate": "2026-04-10",
+    "leader": "Carlos Rodríguez"
+  }
+]

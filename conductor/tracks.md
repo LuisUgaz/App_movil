@@ -26,3 +26,8 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: HU4: Restringir acceso al listado si no hay sesión**
   *Link: [./tracks/restrict_access_list_20260311/](./tracks/restrict_access_list_20260311/)*
+
+---
+
+- [x] **Track: HT1: Cargar proyectos desde JSON local**
+*Link: [./tracks/load_projects_json_20260311/](./tracks/load_projects_json_20260311/)*
