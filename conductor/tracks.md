@@ -9,5 +9,5 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 ---
 
-- [~] **Track: HU1: Visualizar e interactuar con la pantalla de inicio de sesión**
+- [x] **Track: HU1: Visualizar e interactuar con la pantalla de inicio de sesión**
   *Link: [./tracks/login_screen_20260311/](./tracks/login_screen_20260311/)*
