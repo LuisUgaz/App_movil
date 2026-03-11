@@ -41,3 +41,8 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: HT3: Mostrar error si el JSON es inválido**
 *Link: [./tracks/error_json_invalid_20260311/](./tracks/error_json_invalid_20260311/)*
+
+---
+
+- [x] **Track: HU7: Ver listado de proyectos con datos disponibles**
+*Link: [./tracks/listado_proyectos_datos_20260311/](./tracks/listado_proyectos_datos_20260311/)*
