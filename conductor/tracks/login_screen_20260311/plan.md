@@ -6,10 +6,10 @@ Esta fase se centra en preparar la base técnica necesaria para la pantalla de l
 - [x] Task: Conductor - Crear estructura modular de directorios para Login 0dd2697
     - [x] Crear directorio `src/screens/Login/`
     - [x] Crear archivo base `LoginScreen.tsx` con componente funcional vacío
-- [ ] Task: Conductor - Crear componentes UI base para el formulario
-    - [ ] Definir interfaces de TypeScript para los componentes de entrada
-    - [ ] Crear componente de entrada de texto estilizado (Moderno/App)
-    - [ ] Crear componente de botón estilizado para "Ingresar"
+- [x] Task: Conductor - Crear componentes UI base para el formulario d3af82f
+    - [x] Definir interfaces de TypeScript para los componentes de entrada
+    - [x] Crear componente de entrada de texto estilizado (Moderno/App)
+    - [x] Crear componente de botón estilizado para "Ingresar"
 - [ ] Task: Conductor - User Manual Verification 'Fase 1: Estructura y Componentes' (Protocol in workflow.md)
 
 ## Fase 2: Implementación de la Interfaz Visual (UI)
