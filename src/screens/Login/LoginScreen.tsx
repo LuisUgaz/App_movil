@@ -6,7 +6,8 @@ import {
   SafeAreaView, 
   KeyboardAvoidingView, 
   Platform, 
-  ScrollView 
+  ScrollView,
+  TouchableOpacity 
 } from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
@@ -14,9 +15,14 @@ import CustomButton from '../../components/CustomButton';
 const LoginScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const handleLogin = () => {
     console.log('Intento de inicio de sesión:', { username, password });
+  };
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
   };
 
   return (
@@ -51,7 +57,14 @@ const LoginScreen = () => {
               placeholder="Ingresa tu contraseña"
               value={password}
               onChangeText={setPassword}
-              secureTextEntry={true}
+              secureTextEntry={!isPasswordVisible}
+              rightIcon={
+                <TouchableOpacity onPress={togglePasswordVisibility}>
+                  <Text style={styles.toggleText}>
+                    {isPasswordVisible ? 'Ocultar' : 'Mostrar'}
+                  </Text>
+                </TouchableOpacity>
+              }
             />
 
             <CustomButton
@@ -116,6 +129,11 @@ const styles = StyleSheet.create({
   },
   form: {
     width: '100%',
+  },
+  toggleText: {
+    color: '#007AFF',
+    fontWeight: '600',
+    fontSize: 14,
   },
   loginButton: {
     marginTop: 8,
