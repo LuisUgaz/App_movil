@@ -1,12 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { AuthProvider, AuthContext } from './src/context/AuthContext';
 import LoginScreen from './src/screens/Login/LoginScreen';
+import SuccessScreen from './src/screens/Login/SuccessScreen';
+
+const AppContent = () => {
+  const { isAuthenticated } = React.useContext(AuthContext);
+
+  return isAuthenticated ? <SuccessScreen /> : <LoginScreen />;
+};
 
 export default function App() {
   return (
-    <>
-      <LoginScreen />
+    <AuthProvider>
+      <AppContent />
       <StatusBar style="auto" />
-    </>
+    </AuthProvider>
   );
 }

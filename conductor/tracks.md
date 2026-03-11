@@ -11,3 +11,8 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: HU1: Visualizar e interactuar con la pantalla de inicio de sesión**
   *Link: [./tracks/login_screen_20260311/](./tracks/login_screen_20260311/)*
+
+---
+
+- [x] **Track: HU2: Ejecutar el flujo exitoso de inicio de sesión**
+  *Link: [./tracks/login_success_20260311/](./tracks/login_success_20260311/)*

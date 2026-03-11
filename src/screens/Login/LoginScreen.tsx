@@ -11,14 +11,28 @@ import {
 } from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
+import { useAuth } from '../../hooks/useAuth';
 
 const LoginScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = () => {
-    console.log('Intento de inicio de sesión:', { username, password });
+  const { signIn } = useAuth();
+
+  const handleLogin = async () => {
+    setIsLoading(true);
+    try {
+      await signIn(username);
+      // Limpieza de campos tras éxito
+      setUsername('');
+      setPassword('');
+    } catch (error) {
+      console.error('Error durante el inicio de sesión:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -50,6 +64,7 @@ const LoginScreen = () => {
               value={username}
               onChangeText={setUsername}
               autoCapitalize="none"
+              editable={!isLoading}
             />
             
             <CustomInput
@@ -58,8 +73,9 @@ const LoginScreen = () => {
               value={password}
               onChangeText={setPassword}
               secureTextEntry={!isPasswordVisible}
+              editable={!isLoading}
               rightIcon={
-                <TouchableOpacity onPress={togglePasswordVisibility}>
+                <TouchableOpacity onPress={togglePasswordVisibility} disabled={isLoading}>
                   <Text style={styles.toggleText}>
                     {isPasswordVisible ? 'Ocultar' : 'Mostrar'}
                   </Text>
@@ -71,6 +87,8 @@ const LoginScreen = () => {
               title="Ingresar"
               onPress={handleLogin}
               style={styles.loginButton}
+              loading={isLoading}
+              disabled={isLoading}
             />
           </View>
         </ScrollView>
