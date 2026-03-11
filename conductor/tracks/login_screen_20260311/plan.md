@@ -12,7 +12,7 @@ Esta fase se centra en preparar la base técnica necesaria para la pantalla de l
     - [x] Crear componente de botón estilizado para "Ingresar"
 - [x] Task: Conductor - User Manual Verification 'Fase 1: Estructura y Componentes' (Protocol in workflow.md)
 
-## Fase 2: Implementación de la Interfaz Visual (UI)
+## Fase 2: Implementación de la Interfaz Visual (UI) [checkpoint: 980fb08]
 Esta fase se enfoca en construir la interfaz de usuario siguiendo el estilo moderno definido.
 
 - [x] Task: Conductor - Maquetar la pantalla de Login con estilos modernos d632e47
@@ -23,7 +23,7 @@ Esta fase se enfoca en construir la interfaz de usuario siguiendo el estilo mode
     - [x] Configurar campo de contraseña con `secureTextEntry={true}`
     - [x] Agregar icono/botón para alternar la visibilidad de la contraseña
     - [x] Validar que la alternancia de visibilidad funcione correctamente en UI
-- [ ] Task: Conductor - User Manual Verification 'Fase 2: Interfaz Visual' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Fase 2: Interfaz Visual' (Protocol in workflow.md)
 
 ## Fase 3: Lógica Mínima e Interacción
 Esta fase finaliza la funcionalidad mínima requerida para el track.
