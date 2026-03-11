@@ -1,31 +1,60 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react-native';
 import { useProjects } from '../useProjects';
-import projectsData from '../../data/projects.json';
+import * as projectService from '../../services/projectService';
+
+// Mock the projectService
+jest.mock('../../services/projectService');
+const mockedFetchProjects = projectService.fetchProjects as jest.MockedFunction<typeof projectService.fetchProjects>;
 
 describe('useProjects', () => {
-  it('should return a list of projects', () => {
-    const { result } = renderHook(() => useProjects());
-    
-    expect(Array.isArray(result.current)).toBe(true);
+  beforeEach(() => {
+    jest.clearAllMocks();
   });
 
-  it('should return the projects defined in the JSON file', () => {
+  it('should initially have isLoading set to true, projects empty and error null', () => {
     const { result } = renderHook(() => useProjects());
     
-    expect(result.current.length).toBe(projectsData.length);
-    expect(result.current).toEqual(projectsData);
+    expect(result.current.isLoading).toBe(true);
+    expect(result.current.projects).toEqual([]);
+    expect(result.current.error).toBeNull();
   });
 
-  it('should have projects with the correct structure', () => {
+  it('should return the projects and set isLoading to false after the delay', async () => {
+    const mockData = [
+      {
+        "id": 1,
+        "name": "Test Project",
+        "description": "Test Description",
+        "status": "En desarrollo",
+        "startDate": "2026-03-01",
+        "leader": "Test Leader"
+      }
+    ];
+    mockedFetchProjects.mockResolvedValue(mockData);
+
     const { result } = renderHook(() => useProjects());
     
-    result.current.forEach((project: any) => {
-      expect(project).toHaveProperty('id');
-      expect(project).toHaveProperty('name');
-      expect(project).toHaveProperty('description');
-      expect(project).toHaveProperty('status');
-      expect(project).toHaveProperty('startDate');
-      expect(project).toHaveProperty('leader');
-    });
+    // Check initial state
+    expect(result.current.isLoading).toBe(true);
+    
+    // Wait for the simulated delay and state update
+    await waitFor(() => expect(result.current.isLoading).toBe(false), { timeout: 3000 });
+    
+    expect(result.current.projects.length).toBe(1);
+    expect(result.current.projects[0].name).toBe('Test Project');
+    expect(result.current.error).toBeNull();
+  });
+
+  it('should set error state if fetchProjects fails', async () => {
+    mockedFetchProjects.mockRejectedValue(new Error('Fetch failed'));
+
+    const { result } = renderHook(() => useProjects());
+    
+    // Wait for the simulated delay and state update
+    await waitFor(() => expect(result.current.isLoading).toBe(false), { timeout: 3000 });
+    
+    expect(result.current.isLoading).toBe(false);
+    expect(result.current.error).toBe('No se pudieron cargar los proyectos. Por favor, contacte a soporte.');
+    expect(result.current.projects).toEqual([]);
   });
 });

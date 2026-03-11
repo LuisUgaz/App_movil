@@ -6,3 +6,9 @@ export interface Project {
   startDate: string;
   leader: string;
 }
+
+export interface ProjectsState {
+  projects: Project[];
+  isLoading: boolean;
+  error: string | null;
+}

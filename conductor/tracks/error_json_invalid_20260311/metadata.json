@@ -1,0 +1,8 @@
+{
+  "track_id": "error_json_invalid_20260311",
+  "type": "bug",
+  "status": "new",
+  "created_at": "2026-03-11T12:00:00Z",
+  "updated_at": "2026-03-11T12:00:00Z",
+  "description": "HT3: Mostrar error si el JSON es inválido"
+}

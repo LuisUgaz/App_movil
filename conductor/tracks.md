@@ -31,3 +31,13 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: HT1: Cargar proyectos desde JSON local**
 *Link: [./tracks/load_projects_json_20260311/](./tracks/load_projects_json_20260311/)*
+
+---
+
+- [x] **Track: HT2: Mostrar indicador de carga durante la lectura del JSON**
+*Link: [./tracks/load_projects_loading_indicator_20260311/](./tracks/load_projects_loading_indicator_20260311/)*
+
+---
+
+- [x] **Track: HT3: Mostrar error si el JSON es inválido**
+*Link: [./tracks/error_json_invalid_20260311/](./tracks/error_json_invalid_20260311/)*

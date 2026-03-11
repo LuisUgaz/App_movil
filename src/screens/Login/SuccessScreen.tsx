@@ -1,10 +1,22 @@
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 import CustomButton from '../../components/CustomButton';
+import LoadingIndicator from '../../components/LoadingIndicator';
+import ErrorView from '../../components/ErrorView';
 import { useAuth } from '../../hooks/useAuth';
+import { useProjects } from '../../hooks/useProjects';
 
 const SuccessScreen = () => {
   const { user, signOut } = useAuth();
+  const { projects, isLoading, error } = useProjects();
+
+  if (isLoading) {
+    return <LoadingIndicator />;
+  }
+
+  if (error) {
+    return <ErrorView message={error} />;
+  }
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -19,7 +31,7 @@ const SuccessScreen = () => {
         </Text>
         
         <Text style={styles.description}>
-          Has iniciado sesión correctamente. Esta es una pantalla intermedia de éxito.
+          Has iniciado sesión correctamente. Se han cargado {projects.length} proyectos.
         </Text>
 
         <CustomButton 
