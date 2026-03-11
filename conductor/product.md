@@ -41,6 +41,7 @@ La aplicación está diseñada para ofrecer una experiencia móvil fluida y mult
 # Requerimientos funcionales (RF)
 
 - RF-01: Inicio de sesión: permitir autenticación con credenciales válidas.
+- RF-15: Error de autenticación: mostrar mensaje de error inline y limpiar campos ante credenciales inválidas.
 - RF-02: Cierre de sesión: permitir salir de la cuenta.
 - RF-03: Restricción de acceso: bloquear listado/detalle sin sesión.
 - RF-04: Carga desde JSON local: leer proyectos desde JSON embebido en el código.
@@ -60,6 +61,7 @@ La aplicación está diseñada para ofrecer una experiencia móvil fluida y mult
 - RNF-01: Acceso controlado por autenticación
 - RNF-02: Sesión almacenada de forma segura
 - RNF-03: No exponer información sin sesión
+- RNF-14: Retroalimentación inmediata: el error de login debe ser visualmente claro y rápido.
 - RNF-04: Carga rápida (por ser JSON local)
 - RNF-05: Funciona sin internet (offline)
 - RNF-06: Interfaz limpia e intuitiva

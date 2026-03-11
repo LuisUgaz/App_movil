@@ -8,25 +8,39 @@ interface User {
 interface AuthContextData {
   isAuthenticated: boolean;
   user: User | null;
+  error: string | null;
   signIn: (username: string) => Promise<void>;
   signOut: () => void;
+  clearError: () => void;
 }
 
 export const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const isAuthenticated = !!user;
 
-  async function signIn(username: string) {
-    // Simulación de autenticación exitosa (Mock)
-    return new Promise<void>((resolve) => {
+  async function signIn(username: string, password?: string) {
+    setError(null);
+    
+    // Simulación de validación (Mock)
+    // Para fines de esta HU3, si el usuario es "error" o la contraseña es incorrecta, fallará.
+    // Usaremos credenciales fijas para la demo: admin / admin123
+    
+    return new Promise<void>((resolve, reject) => {
       setTimeout(() => {
-        const mockUser = { id: 1, name: username || 'Usuario Prueba' };
-        setUser(mockUser);
-        console.log('Login exitoso (Mock):', mockUser);
-        resolve();
+        if (username === 'admin' && password === 'admin123') {
+          const mockUser = { id: 1, name: username };
+          setUser(mockUser);
+          console.log('Login exitoso (Mock):', mockUser);
+          resolve();
+        } else {
+          setError('Usuario o contraseña incorrectos');
+          console.log('Login fallido (Mock): Credenciales incorrectas');
+          reject(new Error('Auth failed'));
+        }
       }, 1500);
     });
   }
@@ -35,8 +49,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setUser(null);
   }
 
+  function clearError() {
+    setError(null);
+  }
+
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, signIn, signOut }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, error, signIn, signOut, clearError }}>
       {children}
     </AuthContext.Provider>
   );

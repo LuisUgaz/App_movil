@@ -19,17 +19,20 @@ const LoginScreen = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { signIn } = useAuth();
+  const { signIn, error } = useAuth();
 
   const handleLogin = async () => {
     setIsLoading(true);
     try {
-      await signIn(username);
+      await signIn(username, password);
       // Limpieza de campos tras éxito
       setUsername('');
       setPassword('');
-    } catch (error) {
-      console.error('Error durante el inicio de sesión:', error);
+    } catch (err) {
+      console.log('Error capturado en handleLogin:', err.message);
+      // Limpieza de campos tras error (HU3)
+      setUsername('');
+      setPassword('');
     } finally {
       setIsLoading(false);
     }
@@ -82,6 +85,12 @@ const LoginScreen = () => {
                 </TouchableOpacity>
               }
             />
+
+            {error ? (
+              <View style={styles.errorContainer}>
+                <Text style={styles.errorText}>{error}</Text>
+              </View>
+            ) : null}
 
             <CustomButton
               title="Ingresar"
@@ -155,6 +164,20 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     marginTop: 8,
+  },
+  errorContainer: {
+    backgroundColor: '#FFF5F5',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: '#FEB2B2',
+  },
+  errorText: {
+    color: '#C53030',
+    fontSize: 14,
+    textAlign: 'center',
+    fontWeight: '500',
   },
 });
 
