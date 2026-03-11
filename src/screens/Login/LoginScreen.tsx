@@ -22,21 +22,26 @@ const LoginScreen = () => {
   const { signIn, error } = useAuth();
 
   const handleLogin = async () => {
-    setIsLoading(true);
-    try {
-      await signIn(username, password);
-      // Limpieza de campos tras éxito
-      setUsername('');
-      setPassword('');
-    } catch (err) {
+  setIsLoading(true);
+  try {
+    await signIn(username, password);
+    // Limpieza de campos tras éxito
+    setUsername('');
+    setPassword('');
+  } catch (err) {
+    if (err instanceof Error) {
       console.log('Error capturado en handleLogin:', err.message);
-      // Limpieza de campos tras error (HU3)
-      setUsername('');
-      setPassword('');
-    } finally {
-      setIsLoading(false);
+    } else {
+      console.log('Error desconocido:', err);
     }
-  };
+
+    // Limpieza de campos tras error
+    setUsername('');
+    setPassword('');
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);

@@ -21,3 +21,8 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: HU3: Mostrar error ante autenticación fallida**
   *Link: [./tracks/auth_error_20260311/](./tracks/auth_error_20260311/)*
+
+---
+
+- [x] **Track: HU4: Restringir acceso al listado si no hay sesión**
+  *Link: [./tracks/restrict_access_list_20260311/](./tracks/restrict_access_list_20260311/)*
