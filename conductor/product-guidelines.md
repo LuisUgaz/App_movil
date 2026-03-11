@@ -14,8 +14,9 @@ La experiencia del usuario se rige por los siguientes pilares:
 2. **Simplicidad Extrema:** Una interfaz intuitiva que no requiere curva de aprendizaje. Los elementos de navegación deben ser autoexplicativos.
 3. **Interactividad Rica:** Proporcionar feedback visual inmediato (animaciones sutiles, cambios de estado) para confirmar cada acción del usuario.
 
-## Identidad Visual y Estética
+## Identidad Visual y Estética (Estilo Moderno/App)
 - **Estética Energética y Vibrante:** Uso de colores vivos y contrastados para jerarquizar la información y guiar la vista del usuario hacia los elementos clave.
+- **Diseño Moderno:** Uso de bordes redondeados (radios de ~12-20px), sombras suaves (elevación sutil) y contenedores con fondos limpios (#F9F9F9 / #FFFFFF).
 - **Claridad de Datos:** A pesar de la energía visual, la prioridad es la legibilidad del contenido (nombre del proyecto, estado, responsable).
 - **Consistencia:** Mantener patrones visuales uniformes en toda la aplicación (botones, tarjetas de proyecto, campos de login).
 
