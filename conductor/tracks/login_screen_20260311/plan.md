@@ -25,7 +25,7 @@ Esta fase se enfoca en construir la interfaz de usuario siguiendo el estilo mode
     - [x] Validar que la alternancia de visibilidad funcione correctamente en UI
 - [x] Task: Conductor - User Manual Verification 'Fase 2: Interfaz Visual' (Protocol in workflow.md)
 
-## Fase 3: Lógica Mínima e Interacción
+## Fase 3: Lógica Mínima e Interacción [checkpoint: ce61ba9]
 Esta fase finaliza la funcionalidad mínima requerida para el track.
 
 - [x] Task: Conductor - Implementar lógica del botón "Ingresar"
@@ -34,4 +34,4 @@ Esta fase finaliza la funcionalidad mínima requerida para el track.
 - [x] Task: Conductor - Integración de la pantalla en la App principal ca8ac72
     - [x] Modificar `App.tsx` para mostrar la `LoginScreen` como pantalla inicial
     - [x] Verificar la visualización correcta en un dispositivo/emulador móvil
-- [ ] Task: Conductor - User Manual Verification 'Fase 3: Lógica e Integración' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Fase 3: Lógica e Integración' (Protocol in workflow.md)
