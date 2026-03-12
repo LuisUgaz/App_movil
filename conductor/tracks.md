@@ -75,3 +75,8 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: HU14: Visualizar perfil con datos completos**
 *Link: [./tracks/visualizar_perfil_20260312/](./tracks/visualizar_perfil_20260312/)*
+
+---
+
+- [x] **Track: HU15: Restringir acceso al perfil si no hay sesión**
+*Link: [./tracks/restrict_access_profile_20260312/](./tracks/restrict_access_profile_20260312/)*

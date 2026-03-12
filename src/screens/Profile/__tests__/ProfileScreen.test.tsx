@@ -3,6 +3,7 @@ import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import ProfileScreen from '../ProfileScreen';
 import { useRouter } from 'expo-router';
 import * as userService from '../../../services/userService';
+import { AuthContext } from '../../../context/AuthContext';
 
 // Mock useRouter
 jest.mock('expo-router', () => ({
@@ -34,6 +35,14 @@ describe('ProfileScreen', () => {
     position: 'Desarrollador',
   };
 
+  const authContextValue = {
+    isAuthenticated: true,
+    login: jest.fn(),
+    logout: jest.fn(),
+    user: mockUser,
+    isLoading: false,
+  };
+
   beforeEach(() => {
     jest.clearAllMocks();
     mockedFetchUserProfile.mockResolvedValue(mockUser);
@@ -42,7 +51,11 @@ describe('ProfileScreen', () => {
   it('should render the user data correctly after loading', async () => {
     (useRouter as jest.Mock).mockReturnValue({ replace: jest.fn() });
     
-    const { getAllByText, getByText } = render(<ProfileScreen />);
+    const { getAllByText, getByText } = render(
+      <AuthContext.Provider value={authContextValue}>
+        <ProfileScreen />
+      </AuthContext.Provider>
+    );
     
     await waitFor(() => expect(getAllByText('Juan Pérez').length).toBeGreaterThan(0));
     expect(getByText('juan@test.com')).toBeTruthy();
@@ -52,7 +65,11 @@ describe('ProfileScreen', () => {
   it('should render the close button in the header', async () => {
     (useRouter as jest.Mock).mockReturnValue({ replace: jest.fn() });
     
-    const { getByTestId } = render(<ProfileScreen />);
+    const { getByTestId } = render(
+      <AuthContext.Provider value={authContextValue}>
+        <ProfileScreen />
+      </AuthContext.Provider>
+    );
     
     await waitFor(() => expect(getByTestId('close-profile-button')).toBeTruthy());
   });
@@ -61,7 +78,11 @@ describe('ProfileScreen', () => {
     const mockReplace = jest.fn();
     (useRouter as jest.Mock).mockReturnValue({ replace: mockReplace });
     
-    const { getByTestId } = render(<ProfileScreen />);
+    const { getByTestId } = render(
+      <AuthContext.Provider value={authContextValue}>
+        <ProfileScreen />
+      </AuthContext.Provider>
+    );
     
     await waitFor(() => expect(getByTestId('close-profile-button')).toBeTruthy());
     const closeButton = getByTestId('close-profile-button');

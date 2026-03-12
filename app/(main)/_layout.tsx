@@ -13,6 +13,7 @@ export default function AppLayout() {
     <Stack>
       <Stack.Screen name="index" options={{ title: 'Listado de Proyectos' }} />
       <Stack.Screen name="project/[id]" options={{ title: 'Detalle del Proyecto' }} />
+      <Stack.Screen name="profile" options={{ presentation: 'modal', headerShown: true, title: 'Mi Perfil' }} />
     </Stack>
   );
 }

@@ -1,19 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
+import React, { useEffect, useState, useContext } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView, Alert } from 'react-native';
 import { useRouter, Stack } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ProfileInfoItem from '../../components/ProfileInfoItem';
 import { fetchUserProfile } from '../../services/userService';
 import { UserProfile } from '../../types/user';
 import LoadingIndicator from '../../components/LoadingIndicator';
+import { AuthContext } from '../../context/AuthContext';
 
 const ProfileScreen = () => {
   const router = useRouter();
+  const { isAuthenticated } = useContext(AuthContext);
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadProfile = async () => {
+      if (!isAuthenticated) {
+        Alert.alert(
+          'Sesión requerida',
+          'Debes iniciar sesión para acceder a tu perfil.',
+          [{ text: 'OK', onPress: () => router.replace('/login') }]
+        );
+        setIsLoading(false);
+        return;
+      }
+
       try {
         const data = await fetchUserProfile();
         setProfile(data);

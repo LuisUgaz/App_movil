@@ -1,0 +1,8 @@
+{
+  "track_id": "restrict_access_profile_20260312",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-03-12T17:12:00Z",
+  "updated_at": "2026-03-12T17:12:00Z",
+  "description": "HU15: Restringir acceso al perfil si no hay sesión"
+}
