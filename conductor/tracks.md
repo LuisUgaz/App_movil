@@ -67,3 +67,7 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: Navegar desde el listado de proyectos a la pantalla de perfil (HU12)**
 *Link: [./tracks/acceder_perfil_20260312/](./tracks/acceder_perfil_20260312/)*
+---
+
+- [x] **Track: Volver del perfil al listado de proyectos (HU13)**
+*Link: [./tracks/volver_perfil_listado_20260312/](./tracks/volver_perfil_listado_20260312/)*
