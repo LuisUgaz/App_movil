@@ -34,6 +34,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const signOut = useCallback(() => {
     setUser(null);
+    setError(null);
     if (timerRef.current) {
       clearInterval(timerRef.current);
       timerRef.current = null;

@@ -90,3 +90,8 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: HU5: Solicitar inicio de sesión cuando la sesión ha expirado**
 *Link: [./tracks/expiracion_sesion_inactividad_20260312/](./tracks/expiracion_sesion_inactividad_20260312/)*
+
+---
+
+- [x] **Track: HU6: Cerrar sesión**
+*Link: [./tracks/cerrar_sesion_20260312/](./tracks/cerrar_sesion_20260312/)*
