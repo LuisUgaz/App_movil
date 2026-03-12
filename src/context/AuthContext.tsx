@@ -1,4 +1,5 @@
-import React, { createContext, useState, ReactNode } from 'react';
+import React, { createContext, useState, ReactNode, useEffect, useCallback, useRef } from 'react';
+import { Alert } from 'react-native';
 
 interface User {
   id: number;
@@ -12,15 +13,60 @@ interface AuthContextData {
   signIn: (username: string, password?: string) => Promise<void>;
   signOut: () => void;
   clearError: () => void;
+  resetTimer: () => void;
 }
+
+const SESSION_TIMEOUT = 60000; // 1 minuto en milisegundos
 
 export const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const lastActiveAt = useRef<number>(Date.now());
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const isAuthenticated = !!user;
+
+  const resetTimer = useCallback(() => {
+    lastActiveAt.current = Date.now();
+  }, []);
+
+  const signOut = useCallback(() => {
+    setUser(null);
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      // Iniciar el temporizador solo cuando se autentica
+      timerRef.current = setInterval(() => {
+        const timeSinceLastActive = Date.now() - lastActiveAt.current;
+        if (timeSinceLastActive >= SESSION_TIMEOUT) {
+          Alert.alert(
+            'Sesión expirada',
+            'Sesión expirada por inactividad. Por favor, inicie sesión de nuevo.',
+            [{ text: 'OK' }]
+          );
+          signOut();
+        }
+      }, 1000);
+    } else {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    }
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, [isAuthenticated, signOut]);
 
   async function signIn(username: string, password?: string) {
     setError(null);
@@ -34,6 +80,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         if (username === 'admin' && password === 'admin123') {
           const mockUser = { id: 1, name: username };
           setUser(mockUser);
+          resetTimer();
           console.log('Login exitoso (Mock):', mockUser);
           resolve();
         } else {
@@ -45,16 +92,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     });
   }
 
-  function signOut() {
-    setUser(null);
-  }
-
   function clearError() {
     setError(null);
   }
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, error, signIn, signOut, clearError }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, error, signIn, signOut, clearError, resetTimer }}>
       {children}
     </AuthContext.Provider>
   );

@@ -83,8 +83,9 @@ const ProfileScreen = () => {
           />
           <ProfileInfoItem 
             label="Cargo" 
-            value={profile?.position || ''} 
+            value={profile?.position || 'No especificado'} 
             icon="briefcase-outline" 
+            isDefaultValue={!profile?.position}
           />
         </View>
       </ScrollView>

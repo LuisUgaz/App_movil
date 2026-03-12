@@ -6,9 +6,10 @@ interface ProfileInfoItemProps {
   label: string;
   value: string;
   icon: keyof typeof MaterialCommunityIcons.glyphMap;
+  isDefaultValue?: boolean;
 }
 
-const ProfileInfoItem: React.FC<ProfileInfoItemProps> = ({ label, value, icon }) => {
+const ProfileInfoItem: React.FC<ProfileInfoItemProps> = ({ label, value, icon, isDefaultValue }) => {
   return (
     <View style={styles.container} testID="profile-info-item">
       <View style={styles.iconContainer}>
@@ -16,7 +17,7 @@ const ProfileInfoItem: React.FC<ProfileInfoItemProps> = ({ label, value, icon })
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.label}>{label}</Text>
-        <Text style={styles.value}>{value}</Text>
+        <Text style={[styles.value, isDefaultValue && styles.defaultValue]}>{value}</Text>
       </View>
     </View>
   );
@@ -54,6 +55,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#2D3748',
     fontWeight: '600',
+  },
+  defaultValue: {
+    color: '#A0AEC0',
+    fontStyle: 'italic',
+    fontWeight: '400',
   },
 });
 

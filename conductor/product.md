@@ -41,6 +41,7 @@ La aplicación está diseñada para ofrecer una experiencia móvil fluida y mult
 # Requerimientos funcionales (RF)
 
 - RF-01: Inicio de sesión: permitir autenticación con credenciales válidas.
+- RF-16: Expiración de sesión: cerrar sesión automáticamente tras 1 minuto de inactividad global.
 - RF-15: Error de autenticación: mostrar mensaje de error inline y limpiar campos ante credenciales inválidas.
 - RF-02: Cierre de sesión: permitir salir de la cuenta.
 - RF-03: Restricción de acceso: bloquear listado/detalle sin sesión.

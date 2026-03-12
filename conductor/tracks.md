@@ -80,3 +80,13 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: HU15: Restringir acceso al perfil si no hay sesión**
 *Link: [./tracks/restrict_access_profile_20260312/](./tracks/restrict_access_profile_20260312/)*
+
+---
+
+- [x] **Track: HU16: Mostrar valor por defecto cuando falta el cargo**
+*Link: [./tracks/valor_defecto_cargo_20260312/](./tracks/valor_defecto_cargo_20260312/)*
+
+---
+
+- [x] **Track: HU5: Solicitar inicio de sesión cuando la sesión ha expirado**
+*Link: [./tracks/expiracion_sesion_inactividad_20260312/](./tracks/expiracion_sesion_inactividad_20260312/)*
