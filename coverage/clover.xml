@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1773260007811" clover="3.2.0">
-  <project timestamp="1773260007812" name="All files">
-    <metrics statements="93" coveredstatements="80" conditionals="35" coveredconditionals="25" methods="26" coveredmethods="23" elements="154" coveredelements="128" complexity="0" loc="93" ncloc="93" packages="7" files="12" classes="12"/>
-    <package name="App_movil">
-      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-      <file name="App.tsx" path="C:\Users\luis-\Desktop\App_movil\App.tsx">
-        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="12" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="16" count="3" type="stmt"/>
-      </file>
-    </package>
-    <package name="App_movil.src.components">
-      <metrics statements="15" coveredstatements="15" conditionals="15" coveredconditionals="12" methods="5" coveredmethods="5"/>
+<coverage generated="1773321519222" clover="3.2.0">
+  <project timestamp="1773321519222" name="All files">
+    <metrics statements="104" coveredstatements="82" conditionals="41" coveredconditionals="29" methods="26" coveredmethods="22" elements="171" coveredelements="133" complexity="0" loc="104" ncloc="104" packages="7" files="13" classes="13"/>
+    <package name="components">
+      <metrics statements="15" coveredstatements="15" conditionals="15" coveredconditionals="14" methods="5" coveredmethods="5"/>
       <file name="CustomButton.tsx" path="C:\Users\luis-\Desktop\App_movil\src\components\CustomButton.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="9" coveredconditionals="7" methods="1" coveredmethods="1"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="21" count="5" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="9" coveredconditionals="9" methods="1" coveredmethods="1"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="21" count="8" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
       </file>
       <file name="CustomInput.tsx" path="C:\Users\luis-\Desktop\App_movil\src\components\CustomInput.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
@@ -28,24 +18,24 @@
       </file>
       <file name="ErrorView.tsx" path="C:\Users\luis-\Desktop\App_movil\src\components\ErrorView.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="11" count="4" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
         <line num="12" count="3" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
       </file>
       <file name="LoadingIndicator.tsx" path="C:\Users\luis-\Desktop\App_movil\src\components\LoadingIndicator.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="7" count="4" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
       </file>
       <file name="ProjectItem.tsx" path="C:\Users\luis-\Desktop\App_movil\src\components\ProjectItem.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="9" count="4" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
         <line num="10" count="7" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
       </file>
     </package>
-    <package name="App_movil.src.context">
+    <package name="context">
       <metrics statements="19" coveredstatements="14" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="4"/>
       <file name="AuthContext.tsx" path="C:\Users\luis-\Desktop\App_movil\src\context\AuthContext.tsx">
         <metrics statements="19" coveredstatements="14" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="4"/>
@@ -70,8 +60,8 @@
         <line num="56" count="4" type="stmt"/>
       </file>
     </package>
-    <package name="App_movil.src.hooks">
-      <metrics statements="20" coveredstatements="19" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="6"/>
+    <package name="hooks">
+      <metrics statements="23" coveredstatements="22" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="7"/>
       <file name="useAuth.ts" path="C:\Users\luis-\Desktop\App_movil\src\hooks\useAuth.ts">
         <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="5" count="5" type="stmt"/>
@@ -80,27 +70,30 @@
         <line num="11" count="5" type="stmt"/>
       </file>
       <file name="useProjects.ts" path="C:\Users\luis-\Desktop\App_movil\src\hooks\useProjects.ts">
-        <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="10" count="9" type="stmt"/>
-        <line num="11" count="9" type="stmt"/>
-        <line num="12" count="9" type="stmt"/>
-        <line num="14" count="9" type="stmt"/>
-        <line num="15" count="5" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="17" count="4" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
+        <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="13" type="stmt"/>
+        <line num="11" count="13" type="stmt"/>
+        <line num="12" count="13" type="stmt"/>
+        <line num="14" count="13" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
         <line num="21" count="2" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="27" count="5" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="31" count="5" type="stmt"/>
-        <line num="34" count="9" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="27" count="13" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="35" count="13" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="39" count="13" type="stmt"/>
       </file>
     </package>
-    <package name="App_movil.src.screens.Login">
-      <metrics statements="22" coveredstatements="16" conditionals="8" coveredconditionals="3" methods="3" coveredmethods="2"/>
+    <package name="screens.Login">
+      <metrics statements="31" coveredstatements="16" conditionals="12" coveredconditionals="3" methods="4" coveredmethods="2"/>
       <file name="LoginScreen.tsx" path="C:\Users\luis-\Desktop\App_movil\src\screens\Login\LoginScreen.tsx">
         <metrics statements="22" coveredstatements="16" conditionals="8" coveredconditionals="3" methods="3" coveredmethods="2"/>
         <line num="16" count="2" type="stmt"/>
@@ -126,30 +119,51 @@
         <line num="50" count="5" type="stmt"/>
         <line num="114" count="2" type="stmt"/>
       </file>
-    </package>
-    <package name="App_movil.src.screens.ProjectList">
-      <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
-      <file name="ProjectListScreen.tsx" path="C:\Users\luis-\Desktop\App_movil\src\screens\ProjectList\ProjectListScreen.tsx">
-        <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="11" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="15" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
-        <line num="23" count="8" type="stmt"/>
-        <line num="24" count="5" type="stmt"/>
-        <line num="31" count="3" type="stmt"/>
+      <file name="SuccessScreen.tsx" path="C:\Users\luis-\Desktop\App_movil\src\screens\Login\SuccessScreen.tsx">
+        <metrics statements="9" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
       </file>
     </package>
-    <package name="App_movil.src.services">
+    <package name="screens.ProjectList">
+      <metrics statements="13" coveredstatements="13" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
+      <file name="ProjectListScreen.tsx" path="C:\Users\luis-\Desktop\App_movil\src\screens\ProjectList\ProjectListScreen.tsx">
+        <metrics statements="13" coveredstatements="13" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="12" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="16" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="35" count="8" type="stmt"/>
+        <line num="36" count="5" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
       <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="projectService.ts" path="C:\Users\luis-\Desktop\App_movil\src\services\projectService.ts">
         <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="7" count="5" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="types">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="project.ts" path="C:\Users\luis-\Desktop\App_movil\src\types\project.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
   </project>

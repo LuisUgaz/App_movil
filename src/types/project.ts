@@ -11,4 +11,5 @@ export interface ProjectsState {
   projects: Project[];
   isLoading: boolean;
   error: string | null;
+  refresh: () => void;
 }

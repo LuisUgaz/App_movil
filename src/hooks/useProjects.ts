@@ -11,19 +11,20 @@ export const useProjects = (): ProjectsState => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const loadProjects = async () => {
-      try {
-        const data = await fetchProjects();
-        setProjects(data);
-        setError(null);
-      } catch (err) {
-        setError('No se pudieron cargar los proyectos. Por favor, contacte a soporte.');
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  const loadProjects = async () => {
+    setIsLoading(true);
+    try {
+      const data = await fetchProjects();
+      setProjects(data);
+      setError(null);
+    } catch (err) {
+      setError('No se pudieron cargar los proyectos. Por favor, contacte a soporte.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
+  useEffect(() => {
     const timer = setTimeout(() => {
       loadProjects();
     }, 1000);
@@ -31,9 +32,14 @@ export const useProjects = (): ProjectsState => {
     return () => clearTimeout(timer);
   }, []);
 
+  const refresh = () => {
+    loadProjects();
+  };
+
   return {
     projects,
     isLoading,
     error,
+    refresh,
   };
 };

@@ -1,4 +1,4 @@
-import { renderHook, waitFor } from '@testing-library/react-native';
+import { renderHook, waitFor, act } from '@testing-library/react-native';
 import { useProjects } from '../useProjects';
 import * as projectService from '../../services/projectService';
 
@@ -56,5 +56,25 @@ describe('useProjects', () => {
     expect(result.current.isLoading).toBe(false);
     expect(result.current.error).toBe('No se pudieron cargar los proyectos. Por favor, contacte a soporte.');
     expect(result.current.projects).toEqual([]);
+  });
+
+  it('should call fetchProjects again when refresh is called', async () => {
+    mockedFetchProjects.mockResolvedValue([]);
+
+    const { result } = renderHook(() => useProjects());
+    
+    await waitFor(() => expect(result.current.isLoading).toBe(false), { timeout: 3000 });
+    
+    // Clear mocks before refresh
+    jest.clearAllMocks();
+    mockedFetchProjects.mockResolvedValue([]);
+
+    act(() => {
+      result.current.refresh();
+    });
+
+    expect(result.current.isLoading).toBe(true);
+    await waitFor(() => expect(result.current.isLoading).toBe(false), { timeout: 3000 });
+    expect(mockedFetchProjects).toHaveBeenCalledTimes(1);
   });
 });

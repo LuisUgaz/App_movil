@@ -46,3 +46,9 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: HU7: Ver listado de proyectos con datos disponibles**
 *Link: [./tracks/listado_proyectos_datos_20260311/](./tracks/listado_proyectos_datos_20260311/)*
+
+---
+
+- [x] **Track: HU8: Ver estado vacío cuando no hay proyectos**
+*Link: [./tracks/empty_state_list_20260312/](./tracks/empty_state_list_20260312/)*
+

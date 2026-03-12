@@ -8,7 +8,7 @@ interface ProjectItemProps {
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="project-item">
       <View style={styles.content}>
         <Text style={styles.name}>{project.name}</Text>
         <Text style={styles.status}>{project.status}</Text>

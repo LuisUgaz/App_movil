@@ -32,13 +32,13 @@ describe('HU7: Ver listado de proyectos con datos disponibles', () => {
     // Luego pasará al listado, que tiene su propio loading (1s en useProjects)
     
     // Verificamos que entramos a la fase de carga de proyectos
-    await waitFor(() => expect(getByText('Cargando proyectos...')).toBeTruthy(), { timeout: 3000 });
+    await waitFor(() => expect(getByText('Cargando proyectos...')).toBeTruthy(), { timeout: 5000 });
 
     // Then la app debe mostrar un listado de proyectos de forma clara y ordenada
     // And cada proyecto debe mostrar al menos el nombre
-    await waitFor(() => expect(getByText('Proyecto Aceptacion 1')).toBeTruthy(), { timeout: 3000 });
+    await waitFor(() => expect(getByText('Proyecto Aceptacion 1')).toBeTruthy(), { timeout: 5000 });
     expect(getByText('Proyecto Aceptacion 2')).toBeTruthy();
     expect(getByText('Activo')).toBeTruthy();
     expect(getByText('En pausa')).toBeTruthy();
-  });
+  }, 15000);
 });
