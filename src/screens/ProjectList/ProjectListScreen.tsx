@@ -5,9 +5,12 @@ import ProjectItem from '../../components/ProjectItem';
 import LoadingIndicator from '../../components/LoadingIndicator';
 import ErrorView from '../../components/ErrorView';
 import CustomButton from '../../components/CustomButton';
+import { useRouter } from 'expo-router';
+import { Project } from '../../types/project';
 
 const ProjectListScreen = () => {
   const { projects, isLoading, error, refresh } = useProjects();
+  const router = useRouter();
 
   if (isLoading) {
     return <LoadingIndicator />;
@@ -28,12 +31,24 @@ const ProjectListScreen = () => {
     );
   }
 
+  const handleProjectPress = (project: Project) => {
+    router.push({
+      pathname: `/project/${project.id}`,
+      params: project as any, // Expo router params are usually strings but we can pass objects if we serialize them or if the router handles it
+    });
+  };
+
   return (
     <View style={styles.container}>
       <FlatList
         data={projects}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <ProjectItem project={item} />}
+        renderItem={({ item }) => (
+          <ProjectItem 
+            project={item} 
+            onPress={() => handleProjectPress(item)} 
+          />
+        )}
         contentContainerStyle={styles.listContent}
       />
     </View>

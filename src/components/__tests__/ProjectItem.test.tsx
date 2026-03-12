@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { render, fireEvent } from '@testing-library/react-native';
 import ProjectItem from '../ProjectItem';
 import { Project } from '../../types/project';
 
@@ -24,5 +24,15 @@ describe('ProjectItem', () => {
     const { getByText } = render(<ProjectItem project={mockProject} />);
     // Usaremos '>' como indicador visual simple por ahora
     expect(getByText('>')).toBeTruthy();
+  });
+
+  it('should call onPress when pressed', () => {
+    const onPressMock = jest.fn();
+    const { getByTestId } = render(
+      <ProjectItem project={mockProject} onPress={onPressMock} />
+    );
+
+    fireEvent.press(getByTestId('project-item'));
+    expect(onPressMock).toHaveBeenCalledTimes(1);
   });
 });

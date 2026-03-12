@@ -52,3 +52,13 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 - [x] **Track: HU8: Ver estado vacío cuando no hay proyectos**
 *Link: [./tracks/empty_state_list_20260312/](./tracks/empty_state_list_20260312/)*
 
+---
+
+- [x] **Track: HU9: Navegar del listado al detalle del proyecto**
+*Link: [./tracks/nav_project_detail_20260312/](./tracks/nav_project_detail_20260312/)*
+
+---
+
+- [x] **Track: HU10: Visualizar la información básica del proyecto**
+*Link: [./tracks/project_detail_info_20260312/](./tracks/project_detail_info_20260312/)*
+

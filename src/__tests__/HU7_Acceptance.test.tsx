@@ -5,6 +5,12 @@ import * as projectService from '../services/projectService';
 
 // Mock the project service
 jest.mock('../services/projectService');
+// Mock useRouter
+jest.mock('expo-router', () => ({
+  useRouter: jest.fn(() => ({
+    push: jest.fn(),
+  })),
+}));
 
 const mockProjects = [
   { id: '1', name: 'Proyecto Aceptacion 1', status: 'Activo', description: '', startDate: '', leader: '' },

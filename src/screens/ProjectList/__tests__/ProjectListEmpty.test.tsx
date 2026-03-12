@@ -5,6 +5,12 @@ import { useProjects } from '../../../hooks/useProjects';
 
 // Mock useProjects hook
 jest.mock('../../../hooks/useProjects');
+// Mock useRouter
+jest.mock('expo-router', () => ({
+  useRouter: jest.fn(() => ({
+    push: jest.fn(),
+  })),
+}));
 
 describe('ProjectListScreen - Empty State', () => {
   it('should render empty state message when project list is empty', () => {

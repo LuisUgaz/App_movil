@@ -6,6 +6,12 @@ import { useProjects } from '../hooks/useProjects';
 
 // Mock useProjects hook
 jest.mock('../hooks/useProjects');
+// Mock useRouter
+jest.mock('expo-router', () => ({
+  useRouter: jest.fn(() => ({
+    push: jest.fn(),
+  })),
+}));
 
 describe('App Navigation', () => {
   beforeEach(() => {

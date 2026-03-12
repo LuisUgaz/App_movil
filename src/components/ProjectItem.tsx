@@ -1,20 +1,27 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 import { Project } from '../types/project';
 
 interface ProjectItemProps {
   project: Project;
+  onPress?: () => void;
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
+const ProjectItem: React.FC<ProjectItemProps> = ({ project, onPress }) => {
   return (
-    <View style={styles.container} testID="project-item">
-      <View style={styles.content}>
-        <Text style={styles.name}>{project.name}</Text>
-        <Text style={styles.status}>{project.status}</Text>
+    <TouchableHighlight 
+      onPress={onPress}
+      underlayColor="#F0F0F0"
+      testID="project-item"
+    >
+      <View style={styles.container}>
+        <View style={styles.content}>
+          <Text style={styles.name}>{project.name}</Text>
+          <Text style={styles.status}>{project.status}</Text>
+        </View>
+        <Text style={styles.indicator}>{'>'}</Text>
       </View>
-      <Text style={styles.indicator}>{'>'}</Text>
-    </View>
+    </TouchableHighlight>
   );
 };
 

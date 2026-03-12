@@ -6,6 +6,9 @@ Este documento detalla las tecnologías seleccionadas para el desarrollo y mante
 - **React Native (v0.81.5):** Framework principal para el desarrollo de la aplicación móvil multiplataforma.
 - **Expo (v54.0.33):** Plataforma de herramientas y servicios para el desarrollo acelerado con React Native.
 
+## Navegación
+- **Expo Router (v4.0.17):** Librería de navegación basada en el sistema de archivos, utilizada para gestionar las rutas y transiciones entre pantallas.
+
 ## Lenguajes
 - **TypeScript (v5.9.2):** Superset de JavaScript que añade tipado estático para mejorar la calidad del código y la mantenibilidad.
 
