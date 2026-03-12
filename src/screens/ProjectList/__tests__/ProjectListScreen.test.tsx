@@ -9,6 +9,18 @@ jest.mock('../../../hooks/useProjects');
 // Mock useRouter
 jest.mock('expo-router', () => ({
   useRouter: jest.fn(),
+  Stack: {
+    Screen: jest.fn(({ options }) => {
+      if (options && options.headerRight) {
+        return options.headerRight();
+      }
+      return null;
+    }),
+  },
+}));
+// Mock @expo/vector-icons
+jest.mock('@expo/vector-icons', () => ({
+  MaterialCommunityIcons: 'MaterialCommunityIcons',
 }));
 
 const mockProjects = [
@@ -94,5 +106,34 @@ describe('ProjectListScreen', () => {
 
     const { getByText } = render(<ProjectListScreen />);
     expect(getByText(errorMsg)).toBeTruthy();
+  });
+
+  it('should render the profile button in the list screen', () => {
+    (useRouter as jest.Mock).mockReturnValue({ push: jest.fn() });
+    (useProjects as jest.Mock).mockReturnValue({
+      projects: mockProjects,
+      isLoading: false,
+      error: null,
+    });
+
+    const { getByTestId } = render(<ProjectListScreen />);
+    expect(getByTestId('profile-button')).toBeTruthy();
+  });
+
+  it('should navigate to profile screen when profile button is pressed', () => {
+    const mockPush = jest.fn();
+    (useRouter as jest.Mock).mockReturnValue({ push: mockPush });
+    (useProjects as jest.Mock).mockReturnValue({
+      projects: mockProjects,
+      isLoading: false,
+      error: null,
+    });
+
+    const { getByTestId } = render(<ProjectListScreen />);
+    const profileButton = getByTestId('profile-button');
+    
+    fireEvent.press(profileButton);
+
+    expect(mockPush).toHaveBeenCalledWith('/profile');
   });
 });

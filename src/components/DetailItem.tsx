@@ -3,11 +3,13 @@ import { View, Text, StyleSheet } from 'react-native';
 
 interface DetailItemProps {
   label: string;
-  value: string;
+  value?: string | null;
   icon: React.ReactNode;
 }
 
 const DetailItem: React.FC<DetailItemProps> = ({ label, value, icon }) => {
+  const displayValue = value && value.trim() !== '' ? value : 'No especificado';
+
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
@@ -15,7 +17,7 @@ const DetailItem: React.FC<DetailItemProps> = ({ label, value, icon }) => {
       </View>
       <View style={styles.content}>
         <Text style={styles.label}>{label}</Text>
-        <Text style={styles.value}>{value}</Text>
+        <Text style={styles.value}>{displayValue}</Text>
       </View>
     </View>
   );

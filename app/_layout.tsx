@@ -9,6 +9,7 @@ export default function RootLayout() {
         <Stack.Screen name="index" options={{ title: 'Cargando...' }} />
         <Stack.Screen name="login" options={{ title: 'Iniciar Sesión' }} />
         <Stack.Screen name="(main)" options={{ title: 'Proyectos' }} />
+        <Stack.Screen name="profile" options={{ presentation: 'modal', headerShown: true, title: 'Mi Perfil' }} />
       </Stack>
       <StatusBar style="auto" />
     </AuthProvider>

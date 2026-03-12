@@ -9,7 +9,7 @@ interface AuthContextData {
   isAuthenticated: boolean;
   user: User | null;
   error: string | null;
-  signIn: (username: string) => Promise<void>;
+  signIn: (username: string, password?: string) => Promise<void>;
   signOut: () => void;
   clearError: () => void;
 }

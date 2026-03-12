@@ -1,0 +1,9 @@
+[
+  {
+    "id": 4,
+    "name": "Proyecto sin Líder",
+    "description": "Este proyecto no tiene un líder asignado para probar el valor por defecto.",
+    "status": "Planificado",
+    "startDate": "2026-05-01"
+  }
+]

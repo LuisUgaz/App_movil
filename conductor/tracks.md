@@ -61,4 +61,9 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: HU10: Visualizar la información básica del proyecto**
 *Link: [./tracks/project_detail_info_20260312/](./tracks/project_detail_info_20260312/)*
+- [x] **Track: Mostrar valor por defecto 'No especificado' si falta el lder (HU11)**
+*Link: [./tracks/valor_defecto_lider_20260312/](./tracks/valor_defecto_lider_20260312/)*
+---
 
+- [x] **Track: Navegar desde el listado de proyectos a la pantalla de perfil (HU12)**
+*Link: [./tracks/acceder_perfil_20260312/](./tracks/acceder_perfil_20260312/)*

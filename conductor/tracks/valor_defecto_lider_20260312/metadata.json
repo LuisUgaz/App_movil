@@ -1,0 +1,8 @@
+{
+  "track_id": "valor_defecto_lider_20260312",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-03-12T13:22:00Z",
+  "updated_at": "2026-03-12T13:22:00Z",
+  "description": "Mostrar valor por defecto 'No especificado' si falta el líder en el detalle del proyecto (HU11)."
+}

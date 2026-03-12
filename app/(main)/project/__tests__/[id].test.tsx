@@ -45,4 +45,15 @@ describe('ProjectDetailScreen', () => {
     expect(getByText(mockProject.startDate)).toBeTruthy();
     expect(getByText(mockProject.leader)).toBeTruthy();
   });
+
+  it('should render "No especificado" when leader is missing', () => {
+    (useLocalSearchParams as jest.Mock).mockReturnValue({
+      ...mockProject,
+      leader: undefined,
+    });
+    
+    const { getByText } = render(<ProjectDetailScreen />);
+    
+    expect(getByText('No especificado')).toBeTruthy();
+  });
 });

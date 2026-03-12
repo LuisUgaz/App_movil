@@ -42,7 +42,7 @@ export default function ProjectDetailScreen() {
           />
           <DetailItem 
             label="Líder del Proyecto" 
-            value={leader || 'No especificado'} 
+            value={leader} 
             icon={<MaterialCommunityIcons name="account-tie" size={24} color="#4A5568" />}
           />
         </View>

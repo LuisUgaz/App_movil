@@ -24,4 +24,13 @@ describe('DetailItem', () => {
     
     expect(getByTestId('mock-icon')).toBeTruthy();
   });
+
+  it('should render "No especificado" when value is empty or null', () => {
+    // Note: We'll need to update the component to support null/undefined and handle this logic
+    const { getByText } = render(
+      <DetailItem label={label} value="" icon={mockIcon} />
+    );
+    
+    expect(getByText('No especificado')).toBeTruthy();
+  });
 });
