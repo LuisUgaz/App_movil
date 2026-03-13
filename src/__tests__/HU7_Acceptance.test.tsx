@@ -10,6 +10,9 @@ jest.mock('expo-router', () => ({
   useRouter: jest.fn(() => ({
     push: jest.fn(),
   })),
+  Stack: {
+    Screen: jest.fn(() => null),
+  },
 }));
 
 const mockProjects = [
@@ -29,7 +32,7 @@ describe('HU7: Ver listado de proyectos con datos disponibles', () => {
     // Given que el usuario ha iniciado sesión
     // 1. Llenar credenciales
     fireEvent.changeText(getByPlaceholderText('Ingresa tu usuario'), 'admin');
-    fireEvent.changeText(getByPlaceholderText('Ingresa tu contraseña'), 'admin123');
+    fireEvent.changeText(getByPlaceholderText('Ingresa tu contraseña'), 'Admin123');
 
     // 2. Click en ingresar
     fireEvent.press(getByText('Ingresar'));

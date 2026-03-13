@@ -1,0 +1,8 @@
+{
+  "track_id": "verify_and_fix_navigation_20260312",
+  "type": "bug_fix",
+  "status": "new",
+  "created_at": "2026-03-12T14:00:00Z",
+  "updated_at": "2026-03-12T14:00:00Z",
+  "description": "Pruebe la aplicación móvil para garantizar que todas las rutas, pantallas y flujos de navegación funcionen correctamente. Identifique y corrija cualquier error que encuentre. Regla importante: - No ejecutes ningún commit o git"
+}

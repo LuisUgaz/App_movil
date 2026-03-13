@@ -95,3 +95,8 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: HU6: Cerrar sesión**
 *Link: [./tracks/cerrar_sesion_20260312/](./tracks/cerrar_sesion_20260312/)*
+
+---
+
+- [~] **Track: Verificación y Corrección de Navegación**
+*Link: [./tracks/verify_and_fix_navigation_20260312/](./tracks/verify_and_fix_navigation_20260312/)*

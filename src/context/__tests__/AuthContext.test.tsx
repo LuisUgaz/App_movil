@@ -35,7 +35,7 @@ describe('AuthContext - Expiración de sesión', () => {
     });
 
     await act(async () => {
-      const promise = result.current.signIn('admin', 'admin123');
+      const promise = result.current.signIn('admin', 'Admin123');
       jest.runAllTimers();
       await promise;
     });

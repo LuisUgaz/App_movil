@@ -45,7 +45,7 @@ describe('HU14 Integration: Visualizar perfil con datos completos', () => {
 
     // 1. Login
     fireEvent.changeText(getByPlaceholderText('Ingresa tu usuario'), 'admin');
-    fireEvent.changeText(getByPlaceholderText('Ingresa tu contraseña'), 'admin123');
+    fireEvent.changeText(getByPlaceholderText('Ingresa tu contraseña'), 'Admin123');
     fireEvent.press(getByText('Ingresar'));
 
     // 2. Wait for projects list (navigation happens)

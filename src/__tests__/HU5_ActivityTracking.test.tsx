@@ -7,7 +7,7 @@ const MockApp = () => {
   const { isAuthenticated, resetTimer, signIn } = useContext(AuthContext);
   return (
     <View onTouchStart={resetTimer} testID="app-container">
-      <Button title="Login" onPress={() => signIn('admin', 'admin123')} testID="login-button" />
+      <Button title="Login" onPress={() => signIn('admin', 'Admin123')} testID="login-button" />
       <Text testID="auth-status">{isAuthenticated ? 'Authenticated' : 'Not Authenticated'}</Text>
     </View>
   );

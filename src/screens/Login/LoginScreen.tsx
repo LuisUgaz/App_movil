@@ -12,6 +12,7 @@ import {
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import { useAuth } from '../../hooks/useAuth';
+import { useRouter } from 'expo-router';
 
 const LoginScreen = () => {
   const [username, setUsername] = useState('');
@@ -20,6 +21,7 @@ const LoginScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const { signIn, error } = useAuth();
+  const router = useRouter();
 
   const handleLogin = async () => {
   setIsLoading(true);
@@ -28,6 +30,8 @@ const LoginScreen = () => {
     // Limpieza de campos tras éxito
     setUsername('');
     setPassword('');
+    // Redirección al listado de proyectos
+    router.replace('/(main)');
   } catch (err) {
     if (err instanceof Error) {
       console.log('Error capturado en handleLogin:', err.message);
