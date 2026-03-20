@@ -30,6 +30,7 @@ const mockedFetchUserProfile = userService.fetchUserProfile as jest.MockedFuncti
 describe('ProfileScreen', () => {
   const mockUser = {
     id: 1,
+    name: 'Juan Pérez',
     fullName: 'Juan Pérez',
     email: 'juan@test.com',
     position: 'Desarrollador',
@@ -37,10 +38,12 @@ describe('ProfileScreen', () => {
 
   const authContextValue = {
     isAuthenticated: true,
-    login: jest.fn(),
-    logout: jest.fn(),
     user: mockUser,
-    isLoading: false,
+    error: null,
+    signIn: jest.fn(),
+    signOut: jest.fn(),
+    clearError: jest.fn(),
+    resetTimer: jest.fn(),
   };
 
   beforeEach(() => {

@@ -41,6 +41,7 @@ describe('HU16: Mostrar valor por defecto cuando falta el cargo', () => {
   it('debe mostrar "No especificado" con estilo diferenciado si el cargo no existe', async () => {
     const mockUserWithoutPosition = {
       id: 1,
+      name: 'Juan Pérez',
       fullName: 'Juan Pérez',
       email: 'juan@test.com',
       // position está ausente
@@ -50,10 +51,12 @@ describe('HU16: Mostrar valor por defecto cuando falta el cargo', () => {
 
     const authContextValue = {
       isAuthenticated: true,
-      login: jest.fn(),
-      logout: jest.fn(),
       user: mockUserWithoutPosition,
-      isLoading: false,
+      error: null,
+      signIn: jest.fn(),
+      signOut: jest.fn(),
+      clearError: jest.fn(),
+      resetTimer: jest.fn(),
     };
 
     const { getByText } = render(

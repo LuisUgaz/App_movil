@@ -25,3 +25,6 @@ Este documento detalla las tecnologías seleccionadas para el desarrollo y mante
 
 ## Gestión de Dependencias
 - **npm:** Gestor de paquetes oficial para la instalación y actualización de librerías.
+
+## Herramientas de Construcción y Despliegue
+- **EAS Build (Expo Application Services):** Servicio para la generación de binarios nativos (APK) y gestión de perfiles de construcción.

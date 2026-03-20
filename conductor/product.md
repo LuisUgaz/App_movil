@@ -56,6 +56,7 @@ La aplicación está diseñada para ofrecer una experiencia móvil fluida y mult
 - RF-12: Restricción de acceso al perfil: La pantalla de perfil solo debe ser accesible para usuarios con sesión iniciada.
 - RF-13: Manejo de datos faltantes del perfil: Si algún dato del perfil no está disponible, la app debe mostrar un valor por defecto como “No especificado” sin generar errores.
 - RF-14: Fuente local del perfil: La información del perfil del usuario debe obtenerse desde un archivo JSON local, sin requerir base de datos ni API en esta versión.
+- RF-15: Generación de binarios (Android): La aplicación debe estar configurada para generar un archivo APK instalable mediante EAS Build.
 
 # Requerimientos no funcionales (RNF)
 

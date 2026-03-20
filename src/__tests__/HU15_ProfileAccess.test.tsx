@@ -40,10 +40,12 @@ describe('HU15: Restringir acceso al perfil si no hay sesión', () => {
   it('debe mostrar una alerta y redirigir al login si el usuario no está autenticado', async () => {
     const authContextValue = {
       isAuthenticated: false,
-      login: jest.fn(),
-      logout: jest.fn(),
       user: null,
-      isLoading: false,
+      error: null,
+      signIn: jest.fn(),
+      signOut: jest.fn(),
+      clearError: jest.fn(),
+      resetTimer: jest.fn(),
     };
 
     render(

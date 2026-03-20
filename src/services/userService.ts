@@ -1,4 +1,5 @@
 import { UserProfile } from '../types/user';
+import userProfileData from '../data/userProfile.json';
 
 /**
  * Service to fetch user profile from local JSON.
@@ -6,6 +7,9 @@ import { UserProfile } from '../types/user';
  */
 export const fetchUserProfile = async (): Promise<UserProfile> => {
   // Simulating async behavior
-  const userData = await import('../data/userProfile.json');
-  return userData.default as UserProfile;
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(userProfileData as UserProfile);
+    }, 100);
+  });
 };

@@ -103,3 +103,8 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [~] **Track: Verificación y Corrección de Navegación**
   _Link: [./tracks/verify_and_fix_navigation_20260312/](./tracks/verify_and_fix_navigation_20260312/)_
+
+---
+
+- [x] **Track: Configurar build Android, generar APK y validar funcionamiento**
+  _Link: [./tracks/config_build_android_20260319/](./tracks/config_build_android_20260319/)_

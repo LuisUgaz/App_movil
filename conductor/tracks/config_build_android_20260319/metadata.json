@@ -1,0 +1,8 @@
+{
+  "track_id": "config_build_android_20260319",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-03-19T10:00:00Z",
+  "updated_at": "2026-03-19T10:00:00Z",
+  "description": "Configurar build Android, generar APK y validar funcionamiento"
+}

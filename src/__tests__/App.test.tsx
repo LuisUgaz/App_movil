@@ -11,6 +11,9 @@ jest.mock('expo-router', () => ({
   useRouter: jest.fn(() => ({
     push: jest.fn(),
   })),
+  Stack: {
+    Screen: jest.fn(() => null),
+  },
 }));
 
 describe('App Navigation', () => {
