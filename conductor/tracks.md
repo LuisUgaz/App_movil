@@ -108,3 +108,8 @@ Esta archivo registra todos los tracks importantes del proyecto. Cada track tien
 
 - [x] **Track: Configurar build Android, generar APK y validar funcionamiento**
   _Link: [./tracks/config_build_android_20260319/](./tracks/config_build_android_20260319/)_
+
+---
+
+- [x] **Track: Actualizar icono de la aplicación, configurar iconos adaptativos y splash screen**
+  _Link: [./tracks/actualizar_icono_app_20260320/](./tracks/actualizar_icono_app_20260320/)_
